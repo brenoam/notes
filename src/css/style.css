@@ -2,17 +2,16 @@
 .note {
 	font-family: arial narrow;
 	background-color: #f5d442;
-	width: 300px;
-	height: 200px;
-	border: 1px;
-	border-radius: 3px;
-	box-shadow: 3px 3px 6px grey;
+	width: 200px;
+	height: 150px;
+	border: 0.3px solid lightgrey;
+	border-radius: 5px;
 	padding: 5px 5px 5px 5px;
 	margin: 15px 15px 15px 15px;
-	
+	overflow: hidden;
 }
 .note:hover {
-	box-shadow: 6px 6px 10px grey;
+	box-shadow: 3px 3px 5px grey;
 }
 .note-title {
 	padding: 5px 16px 16px;
@@ -22,15 +21,18 @@
 
 .note-text {
 	padding: 5px 16px 16px;
-	font-size: 11;
+	font-size: 12;
 }
 
-.note-delete-button {
-	padding: 5px 5px 5px;
+.note-delete{
+	padding: 1px 3px 1px 3px;
+	border: 1px;
+	color: black;
+	background-color: white;
+	border-radius: 50px;
 	float: right;
 }
 
-.fa-times:hover {
-	color: white;
-	text-shadow: 6px 6px 10px grey;
+.note-delete:hover {
+	color: tomato;
 }
