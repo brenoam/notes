@@ -2,7 +2,7 @@ import Note from './Note.js';
 export default class NoteController {
 	constructor(notes){
 		this.notes = (notes || []).map(note => new Note(note, this));
-		this._idGenerator = Math.max(...this.notes.map(note => note.id));
+		this._idGenerator = this.notes.length? Math.max(...this.notes.map(note => note.id)): 0;
 		this.notes.forEach(note => note.render());
 	}
 	
