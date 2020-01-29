@@ -1,10 +1,9 @@
 import Note from './Note.js';
 export default class NoteController {
 	constructor(notes){
-		this.notes = notes || [];
-		this._idGenerator = Math.max(this.notes.map(note => note.id));
-		
-		
+		this.notes = (notes || []).map(note => new Note(note, this));
+		this._idGenerator = Math.max(...this.notes.map(note => note.id));
+		this.notes.forEach(note => note.render());
 	}
 	
 	generateId() {
@@ -12,17 +11,9 @@ export default class NoteController {
 		return this._idGenerator;
 	};
 	
-	renderNote(note) {
-		var notes = document.getElementsByClassName("notes")[0];
-		let noteHtml = note.getRenderEl();
-		let noteEl = document.createElement('div');
-		noteEl.innerHTML = noteHtml;
-		notes.appendChild(noteEl);
-	}
-	
 	addNote(title, text) {
-		let note = new Note(this.generateId(), title, text);
+		let note = new Note({id:this.generateId(), title: title, text:text}, this);
 		this.notes.push(note);
-		this.renderNote(note);
+		note.render();
 	}
 }
