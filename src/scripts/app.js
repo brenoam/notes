@@ -1,18 +1,9 @@
 import NoteController from './NoteController.js'
 
-var noteCtrl = new NoteController([
-	{
-		"id": 5,
-		"text": "AAAAAAAA",
-	},
-	{
-		"id": 50,
-		"text": "AAAacjjiakvn oalAAAAA",
-	}
-]);
+var noteCtrl = new NoteController();
 
 function addNote(){
-	noteCtrl.addNote('title', 'text');
+	noteCtrl.addNote();
 }
 
 document.getElementById("addNoteBtn").addEventListener('click', addNote);
