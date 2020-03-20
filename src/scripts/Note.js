@@ -7,7 +7,7 @@ export default class Note {
 	}
 	
 	getTemplate() {
-		return `<div class="note" id="{{id}}">
+		return `<div class="note flex-item" id="{{id}}">
 			<div class="note-delete">
 				<i class="fas fa-times"></i>
 			</div>
